@@ -1,0 +1,92 @@
+.bonuses {
+	&__container {
+		margin-bottom: 100px;
+		@include adaptiv-value("margin-bottom", 100, 30, 1);
+		margin-top: 50px;
+		@include adaptiv-value("margin-top", 50, 0, 1);
+	}
+
+	&__top {
+		text-align: center;
+	}
+
+	&__title {
+		margin-bottom: 21px;
+	}
+
+	&__subtitle {
+		font-family: "Circe";
+		font-weight: 700;
+		@include adaptiv-font(26, 16);
+		line-height: 130%;
+		margin-bottom: 50px;
+		@include adaptiv-value("margin-bottom", 50, 10, 1);
+		span {
+			text-transform: uppercase;
+			color: $blueColor;
+		}
+	}
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: 30px;
+		@include adaptiv-value("gap", 30, 8, 1);
+		@media (max-width: $tablet) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		height: 331px;
+		position: relative;
+		margin-bottom: 30px;
+		@include adaptiv-value("width", 275, 136, 1);
+		@include adaptiv-value("height", 331, 200, 1);
+		span {
+			position: absolute;
+			bottom: 0px;
+			left: 0;
+			margin-bottom: 60px;
+			@include adaptiv-value("margin-bottom", 60, 45, 1);
+			z-index: 3;
+			width: 100%;
+			@include adaptiv-value("height", 7, 5, 1);
+			background: radial-gradient(50% 50% at 50% 50%, #4b4f5a 0%, rgba(75, 79, 90, 0) 100%);
+			opacity: 0.5;
+			filter: blur(3px);
+		}
+	}
+
+	&__image {
+		display: flex;
+		align-items: center;
+		flex: 1 1 auto;
+		position: relative;
+		@include adaptiv-value("height", 275, 136, 1);
+		img {
+			padding: 20px;
+			width: 100%;
+			@include adaptiv-value("max-width", 275, 136, 1);
+			height: auto;
+			object-fit: cover;
+		}
+	}
+
+	&__text {
+		font-weight: 700;
+		font-size: 22px;
+		@include adaptiv-font(22, 14);
+		line-height: 100%;
+		text-align: center;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		white-space: nowrap;
+	}
+}

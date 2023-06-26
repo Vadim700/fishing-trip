@@ -1,0 +1,288 @@
+.happy {
+	&__container {
+		@include adaptiv-value("padding-bottom", 100, 40, 1);
+		display: flex;
+		align-items: center;
+		@include adaptiv-value("gap", 150, 50, 1);
+		@media (max-width: $tablet) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__roulette {
+	}
+
+	&__content {
+	}
+}
+
+.content-happy {
+	&__title {
+		// margin-bottom: 15px;
+		@include adaptiv-value("margin-bottom", 15, 7, 1);
+	}
+
+	&__row {
+		display: flex;
+	}
+
+	&__row-top {
+		@media (max-width: em(1050)) {
+			display: flex;
+		}
+	}
+
+	&__top {
+		@media (max-width: em(1050)) {
+			flex: 0 1 77%;
+		}
+	}
+
+	&__subtitle {
+		@include adaptiv-font(16, 12);
+		@include adaptiv-value("margin-bottom", 35, 20, 1);
+		font-family: "Circe";
+		font-weight: 400;
+		line-height: 130%;
+	}
+
+	&__form {
+		@include adaptiv-value("margin-right", 25, 0, 1);
+	}
+
+	&__label {
+		@include adaptiv-font(16, 12);
+		font-family: "Circe";
+		font-weight: 400;
+		line-height: 100%;
+		color: rgba(75, 79, 90, 0.7);
+		display: block;
+		@include adaptiv-value("margin-bottom", 14, 6, 1);
+		span {
+			color: $redColor;
+		}
+	}
+
+	&__inp {
+		@include adaptiv-value("height", 60, 50, 1);
+		@include adaptiv-font(18, 14);
+		@include adaptiv-value("padding-left", 30, 20, 1);
+		@include adaptiv-value("margin-bottom", 23, 14, 1);
+		width: 100%;
+		max-width: 380px;
+		color: $mainColor;
+		background: #f3f3f6;
+		font-family: "Circe";
+		font-style: normal;
+		font-weight: 400;
+		line-height: 27px;
+		display: flex;
+		align-items: center;
+		color: #4b4f5a;
+		border-bottom: 2px solid #d7dae0;
+		border-radius: 10px 10px 0 0;
+		outline: none;
+		input {
+		}
+	}
+
+	&__button {
+		// width: 100%;
+		max-width: 380px;
+		@include adaptiv-value("height", 70, 62, 1);
+	}
+
+	&__icon {
+		padding-top: 30px;
+		@media (max-width: em(1050)) {
+			padding-top: 0;
+			@include adaptiv-value("margin-left", 50, 5, 1);
+		}
+		img {
+			@include adaptiv-value("height", 153, 86, 1);
+			@include adaptiv-value("width", 115, 63, 1);
+		}
+	}
+}
+
+.roulette {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 500px;
+	height: 500px;
+	@include adaptiv-value("width", 500, 265, 1);
+	@include adaptiv-value("height", 500, 265, 1);
+	button {
+		img {
+			position: absolute;
+			// width: 110px;
+			// height: 110px;
+			@include adaptiv-value("width", 110, 60, 1);
+			@include adaptiv-value("height", 110, 60, 1);
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 7;
+			background-color: #fff;
+			border-radius: 50%;
+			box-shadow: 5px 5px 60px #4ba2f2;
+			// padding: 10px;
+			@include adaptiv-value("padding", 10, 5, 1);
+		}
+	}
+
+	> span:first-child {
+		position: absolute;
+		bottom: -26px;
+		left: 32px;
+		@include adaptiv-value("left", 32, -10, 1);
+		width: 404px;
+		height: 7px;
+		@include adaptiv-value("height", 7, 10, 1);
+		@include adaptiv-value("width", 400, 285, 1);
+		background: radial-gradient(50% 50% at 50% 50%, #4b4f5a 0%, rgba(75, 79, 90, 0) 100%);
+		filter: blur(6px);
+	}
+
+	&__container {
+		width: 470px;
+		height: 470px;
+		@include adaptiv-value("width", 470, 232, 1);
+		@include adaptiv-value("height", 470, 232, 1);
+		margin: 0;
+		padding: 0;
+		border-radius: 50%;
+		border: 15px solid #001e38;
+		position: relative;
+		overflow: hidden;
+		transition: 5s;
+		@media (max-width: $mobile) {
+			border: 10px solid #001e38;
+		}
+		*div {
+			height: 254px;
+			width: 140px;
+			@include adaptiv-value("width", 140, 80, 1);
+			@include adaptiv-value("height", 254, 134, 1);
+			position: absolute;
+			clip-path: polygon(100% 0, 50% 100%, 0 0);
+			transform-origin: bottom;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			font-size: 28px;
+			font-weight: bold;
+			color: #fff;
+			left: 135px;
+			opacity: 0.95;
+			left: 164.5px;
+			top: -14px;
+			@include adaptiv-value("left", 164.5, 75, 1);
+			// @include adaptiv-value("top", -14, 100, 1);
+			text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
+		}
+	}
+
+	&__wrap {
+	}
+
+	&__spin {
+		width: 120px;
+		height: 120px;
+		background-color: #fff;
+		border-radius: 50%;
+	}
+
+	&__one {
+		background-color: #00376e;
+		left: 50%;
+	}
+
+	&__two {
+		background-color: #f84b25;
+		transform: rotate(30deg);
+	}
+
+	&__three {
+		background-color: #f8b214;
+		transform: rotate(60deg);
+	}
+
+	&__four {
+		background-color: #00b88f;
+		transform: rotate(90deg);
+	}
+
+	&__five {
+		background-color: #00376e;
+		transform: rotate(120deg);
+	}
+
+	&__six {
+		background-color: #f84b25;
+		transform: rotate(150deg);
+	}
+
+	&__seven {
+		background-color: #f8b214;
+		transform: rotate(180deg);
+	}
+
+	&__eight {
+		background-color: #00b88f;
+		transform: rotate(210deg);
+	}
+
+	&__nine {
+		background-color: #00376e;
+		transform: rotate(240deg);
+	}
+
+	&__ten {
+		background-color: #f84b25;
+		transform: rotate(270deg);
+	}
+
+	&__eleven {
+		background-color: #f8b214;
+		transform: rotate(300deg);
+	}
+
+	&__twelve {
+		background-color: #00b88f;
+		transform: rotate(330deg);
+	}
+
+	&__arrow {
+		&::after {
+			content: "";
+			position: absolute;
+			width: 20px;
+			height: 24px;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: #a31718;
+			z-index: 2;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			width: 21px;
+			height: 20px;
+			top: 24px;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 2;
+			border: 10.4px solid transparent;
+			border-top: 12px solid #a31718;
+		}
+	}
+	&__present {
+		transition: 5s;
+	}
+}

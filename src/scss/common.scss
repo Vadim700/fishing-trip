@@ -1,0 +1,103 @@
+// Заголовки, общие БЄМ блоки и проче...
+.title {
+	font-weight: 700;
+	@include adaptiv-font(56, 22);
+	line-height: 100%;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: #4b4f5a;
+}
+
+.btn {
+	@include adaptiv-value("width", 378, 284, 1);
+	@include adaptiv-value("height", 80, 62, 1);
+	@include adaptiv-font(18, 14);
+	font-weight: 700;
+	line-height: 100%;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: #ffffff;
+	background: linear-gradient(180deg, #4ba2f2 0%, #4ba2f2 54.69%, #4ba2f2 54.7%, #418dd2 100%);
+	box-shadow: 5px 5px 60px rgba(0, 0, 0, 0.15), inset 0px -4px 2px #3c83c5, inset 0px -8px 2px #4c9eeb;
+	border-radius: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	cursor: pointer;
+	&:hover {
+		background: #3c83c5;
+	}
+}
+
+.main-text {
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: 700;
+	@include adaptiv-font(22, 16);
+	line-height: 100%;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: $mainColor;
+}
+
+// кнопки слайдера
+.control-slider {
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	width: 1600px;
+	height: 50px;
+	top: 380px;
+	left: 50%;
+	transform: translateX(-50%);
+	// z-index: 2;
+	button {
+		background-color: #fff;
+		border-radius: 50%;
+		@include adaptiv-value("width", 50, 40, 1);
+		@include adaptiv-value("height", 50, 40, 1);
+	}
+	@media (max-width: em(1615)) {
+		position: static;
+		margin: 0 auto;
+		@include adaptiv-value("margin-top", 50, 20, 1);
+		@include adaptiv-value("width", 600, 110, 1);
+		transform: translateX(0);
+	}
+
+	&_prev {
+		&::after {
+			content: "";
+			position: absolute;
+			@include adaptiv-value("width", 50, 40, 1);
+			@include adaptiv-value("height", 50, 40, 1);
+			top: 0;
+			left: 0;
+			border-radius: 50%;
+			border: 1px solid #d7dae0;
+		}
+	}
+
+	&_next {
+		&::after {
+			content: "";
+			position: absolute;
+			@include adaptiv-value("width", 50, 40, 1);
+			@include adaptiv-value("height", 50, 40, 1);
+			top: 0;
+			right: 0;
+			border-radius: 50%;
+			border: 1px solid #d7dae0;
+		}
+	}
+}
+
+.smal-text {
+	font-family: "Circe";
+	font-weight: 700;
+	@include adaptiv-font(16, 12);
+	line-height: 100%;
+	letter-spacing: 0.03em;
+	text-decoration-line: underline;
+}

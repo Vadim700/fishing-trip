@@ -1,0 +1,189 @@
+.fitback {
+	background: linear-gradient(0deg, #cce7ff, #cce7ff), linear-gradient(180deg, #d0e2ec 0%, rgba(226, 245, 255, 0) 100%);
+	position: relative;
+
+	&__bg-top {
+		position: absolute;
+		width: 100%;
+		max-width: 1920px;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		img {
+			object-fit: cover;
+			object-position: top;
+			width: 100%;
+			@include adaptiv-value("height", 240, 140, 1);
+		}
+	}
+
+	&__container {
+		position: relative;
+		z-index: 2;
+		@include adaptiv-value("padding-top", 175, 40, 1);
+		@include adaptiv-value("padding-bottom", 175, 25, 1);
+	}
+
+	&__btn {
+		@include adaptiv-value("width", 378, 284, 1);
+		@include adaptiv-value("height", 80, 62, 1);
+		@include adaptiv-font(18, 14);
+		font-weight: 700;
+		line-height: 100%;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		color: #ffffff;
+		background: linear-gradient(180deg, #4ba2f2 0%, #4ba2f2 54.69%, #4ba2f2 54.7%, #418dd2 100%);
+		box-shadow: 5px 5px 60px rgba(0, 0, 0, 0.15), inset 0px -4px 2px #3c83c5, inset 0px -8px 2px #4c9eeb;
+		border-radius: 12px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 auto;
+		cursor: pointer;
+		&:hover {
+			background: #3c83c5;
+		}
+	}
+
+	&__slider {
+		// @include adaptiv-value("margin-bottom", 67, 0, 1);
+		@media (max-width: $tablet) {
+			margin: 0;
+		}
+	}
+
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 60, 25, 1);
+		white-space: nowrap;
+		@media (max-width: $mobile) {
+			white-space: normal;
+		}
+	}
+
+	&__pagination {
+		text-align: right;
+		font-weight: 700;
+		font-size: 22px;
+		@include adaptiv-font(22, 12);
+		line-height: 100%;
+		text-transform: uppercase;
+		color: #4b4f5a;
+	}
+
+	&__content {
+		@media (max-width: $mobile) {
+		}
+	}
+
+	&__image {
+		img {
+			width: 100%;
+			max-width: 463px;
+			height: auto;
+			object-fit: cover;
+		}
+	}
+
+	&__bg-bottom {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		max-width: 1920px;
+		height: auto;
+		img {
+			object-fit: cover;
+			object-position: bottom;
+			width: 100%;
+			@include adaptiv-value("height", 240, 140, 1);
+		}
+	}
+
+	&__control {
+		top: 45%;
+		@media (max-width: em(1615)) {
+			@include adaptiv-value("margin-bottom", 50, 20, 1);
+			@include adaptiv-value("margin-top", 20, 0, 1);
+		}
+	}
+
+	&__button {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.content {
+	width: 100%;
+	@include adaptiv-value("max-width", 463, 284, 1);
+	@include adaptiv-value("height", 300, 187, 1);
+	@include adaptiv-value("margin-bottom", 67, 22, 1);
+	@include adaptiv-value("padding", 40, 20, 1);
+	@include adaptiv-value("border-radius", 12, 8, 1);
+	box-shadow: 5px 5px 60px rgba(75, 79, 90, 0.1);
+	background: #ffffff;
+	overflow-y: auto;
+
+	&__title {
+		font-weight: 700;
+		@include adaptiv-font(22, 16);
+		line-height: 100%;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		@include adaptiv-value("margin-bottom", 13, 8, 1);
+	}
+
+	&__text {
+		font-family: "Circe";
+		font-weight: 400;
+		line-height: 130%;
+		color: $mainColor;
+		@include adaptiv-value("max-height", 150, 100, 1);
+		@include adaptiv-value("margin-bottom", 14, 8, 1);
+		@include adaptiv-font(16, 13);
+		background: linear-gradient(180deg, #4b4f5a 73.96%, rgba(75, 79, 90, 0) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		text-fill-color: transparent;
+		overflow-y: hidden;
+	}
+
+	&__reed-more {
+		font-weight: 700;
+		@include adaptiv-font(18, 12);
+		line-height: 100%;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		color: $blueColor;
+	}
+}
+
+.swiper-pagination-current {
+	font-weight: 700;
+	@include adaptiv-font(56, 22);
+	line-height: 100%;
+	text-transform: uppercase;
+	color: $blueColor;
+	display: inline-block;
+	// margin-bottom: 60px;
+	@include adaptiv-value("margin-bottom", 60, 25, 1);
+}
+
+.video-gallery__prev,
+.video-gallery__next {
+	@include adaptiv-value("width", 50, 40, 1);
+	@include adaptiv-value("height", 50, 40, 1);
+	top: 0;
+	left: 0;
+	border-radius: 50%;
+	border: 1px solid #d7dae0;
+	background-color: #f8f8f8;
+}

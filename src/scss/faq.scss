@@ -1,0 +1,89 @@
+.faq {
+	&__container {
+		@include adaptiv-value("padding-bottom", 90, 40, 1);
+	}
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 70, 20, 1);
+		text-align: center;
+	}
+}
+
+.spollers {
+	&__item {
+		box-shadow: 5px 5px 60px rgba(75, 79, 90, 0.1);
+		@include adaptiv-value("margin-bottom", 12, 8, 1);
+		@include adaptiv-value("padding", 30, 15, 1);
+		@include adaptiv-value("padding-left", 45, 18, 1);
+		@include adaptiv-value("padding-right", 45, 18, 1);
+		border-radius: 12px;
+		transition: all 0.3s ease 0s;
+		&:hover {
+			box-shadow: 5px 5px 60px rgba(75, 162, 242, 0.4);
+		}
+		button {
+			display: block;
+			@include adaptiv-font(18, 14);
+			font-weight: 700;
+			line-height: 100%;
+			letter-spacing: 0.03em;
+			text-transform: uppercase;
+			width: 100%;
+			height: 100%;
+			text-align: left;
+		}
+	}
+
+	&__title {
+		display: flex;
+		align-items: center;
+		position: relative;
+		// padding-right: 10px;
+		@include adaptiv-value("padding-right", 30, 10, 1);
+		&::after,
+		&::before {
+			content: "";
+			position: absolute;
+			width: 3px;
+			height: 10px;
+			top: 35%;
+			right: 0;
+			background-color: $mainColor;
+			transform: rotate(45deg);
+			transition: all 0.3s ease 0s;
+		}
+		&::before {
+			// right: 15px;
+			@include adaptiv-value("right", 15, 4, 1);
+			transform: rotate(-45deg);
+		}
+		&::after {
+			right: 9px;
+			@include adaptiv-value("right", 9, -2, 1);
+			transform: rotate(45deg);
+		}
+		&._spoller-active {
+			&::after {
+				transform: rotate(-45deg);
+			}
+			&::before {
+				transform: rotate(45deg);
+			}
+		}
+	}
+
+	&__body {
+		@include adaptiv-font(16, 14);
+		@include adaptiv-value("padding", 30, 15, 1);
+		@include adaptiv-value("margin-top", 31, 13, 1);
+		font-family: "Circe";
+		line-height: 130%;
+		background: #f8f8f9;
+		border-radius: 12px;
+		p {
+			&:not(:last-child) {
+				@include adaptiv-value("margin-bottom", 16, 14, 1);
+			}
+		}
+	}
+}

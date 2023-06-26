@@ -1,0 +1,46 @@
+.sertification {
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include adaptiv-value("padding-bottom", 0, 40, 1);
+		@media (max-width: $tablet) {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+
+	&__row {
+		display: flex;
+		@include adaptiv-value("column-gap", 30, 9, 1);
+	}
+
+	&__description {
+	}
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 15, 5, 1);
+	}
+
+	&__subtitle {
+		font-family: "Circe";
+		font-weight: 400;
+		@include adaptiv-font(16, 12);
+		@include adaptiv-value("margin-bottom", 0, 15, 1);
+		line-height: 130%;
+	}
+
+	&__content {
+	}
+
+	&__item {
+		filter: drop-shadow(8px 8px 60px rgba(75, 79, 90, 0.2));
+		border-radius: 8px;
+		img {
+			width: 100%;
+			@include adaptiv-value("max-width", 300, 89, 1);
+			@include adaptiv-value("height", 423, 125, 1);
+			object-fit: cover;
+		}
+	}
+}

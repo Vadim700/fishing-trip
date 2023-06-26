@@ -1,0 +1,72 @@
+.gallery {
+	&__container {
+		margin-top: -20px;
+		@include adaptiv-value("margin-top", -20, 0, 1);
+		@include adaptiv-value("margin-bottom", 60, 0, 1);
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 20px;
+	}
+
+	&__title {
+		text-align: center;
+	}
+
+	&__row {
+		display: flex;
+		justify-content: center;
+
+		flex-wrap: wrap;
+		gap: 30px;
+		@include adaptiv-value("gap", 30, 12, 1);
+		margin-bottom: 44px;
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__item {
+		img {
+			width: 100%;
+			// max-width: 462px;
+			@include adaptiv-value("max-width", 462, 136, 1);
+			height: auto;
+		}
+	}
+}
+
+.galerry {
+	&__bg {
+		&_left {
+			img {
+				width: 100%;
+				max-width: 313px;
+				@include adaptiv-value("max-width", 313, 130, 1);
+				height: auto;
+				@media (max-width: $mobileSmall) {
+					opacity: 0;
+					visibility: hidden;
+				}
+			}
+		}
+
+		&_right {
+			img {
+				width: 100%;
+				max-width: 362px;
+				@include adaptiv-value("max-width", 362, 100, 1);
+				height: auto;
+			}
+			@media (max-width: $mobileSmall) {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+	}
+}

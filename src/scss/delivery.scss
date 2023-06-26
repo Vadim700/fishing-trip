@@ -1,0 +1,48 @@
+.delivery {
+	// @include adaptiv-value("padding-top", 100, 0, 1);
+	@include adaptiv-value("padding-bottom", 100, 40, 1);
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include adaptiv-value("gap", 50, 20, 1);
+		@media (max-width: $mobile) {
+			flex-direction: column-reverse;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	&__description {
+		flex: 0 0 56%;
+		@include adaptiv-value("max-width", 813, 320, 1);
+	}
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 40, 8, 1);
+	}
+
+	&__text {
+		font-family: "Circe";
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 130%;
+		p {
+			@include adaptiv-value("margin-bottom", 16, 12, 1);
+		}
+		span {
+			color: red;
+		}
+	}
+
+	&__image {
+		img {
+			width: 100%;
+			@include adaptiv-value("max-width", 500, 232, 1);
+			height: auto;
+		}
+	}
+}
