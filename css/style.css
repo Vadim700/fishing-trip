@@ -433,6 +433,12 @@ body::after {
 .header__container {
   display: flex;
   justify-content: space-between;
+  padding-top: 30px;
+}
+@media (max-width: 1450px) {
+  .header__container {
+    padding-top: calc(0px + 30 * ((100vw - 320px) / 1130));
+  }
 }
 .header__menu {
   margin: 0 auto;
