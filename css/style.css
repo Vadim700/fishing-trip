@@ -152,7 +152,7 @@ h6 {
 
 body::after {
   content: "";
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.55);
   position: fixed;
   width: 100%;
   height: 100%;
@@ -205,17 +205,74 @@ body::after {
 }
 
 .popup__content {
+  position: relative;
   visibility: hidden;
   transform: scale(0);
   transition: transform 0.3s ease 0s;
-  background-color: #eee;
-  padding: 20px;
+  border: 2px solid #fff;
+  padding: 40px;
   width: 100%;
   max-width: 900px;
   border-radius: 20px;
+  backdrop-filter: blur(20px);
 }
 .lock .popup__content {
   visibility: visible;
+}
+
+.popup__content {
+  color: #4b4f5a;
+}
+.popup__close {
+  font-size: 28px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.popup__title {
+  font-family: "Circe";
+  font-weight: 700;
+  line-height: 130%;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .popup__title {
+    font-size: calc(18px + 10.2 * ((100vw - 320px) / 1920));
+  }
+}
+@media (min-width: 767px) {
+  .popup__title {
+    font-size: calc(18px + 6 * (100vw / 1920));
+  }
+}
+.popup__input {
+  height: 60px;
+  padding-left: 30px;
+  margin-bottom: 23px;
+  width: 100%;
+  font-weight: 400;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  outline: none;
+}
+.popup__textarea {
+  border-radius: 10px;
+  width: 100%;
+  min-height: 150px;
+  color: #4b4f5a;
+  font-weight: 400;
+  line-height: 27px;
+  padding: 15px 30px;
+  margin-bottom: 23px;
+  outline: none;
+  resize: none;
+}
+.popup__button {
+  height: 60px;
 }
 
 [class*=-ibg] {
@@ -423,7 +480,7 @@ body::after {
   top: 0;
   left: 0;
   z-index: 11;
-  padding-top: 25px;
+  padding-top: 10px;
 }
 @media (max-width: 1450px) {
   .header {
@@ -675,17 +732,11 @@ body::after {
   left: 0;
 }
 .phones__list {
-  padding-top: 54px;
   font-weight: 700;
   line-height: 100%;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   margin-bottom: 7px;
-}
-@media (max-width: 1450px) {
-  .phones__list {
-    padding-top: calc(0px + 54 * ((100vw - 320px) / 1130));
-  }
 }
 @media (max-width: 767px) {
   .phones__list {
